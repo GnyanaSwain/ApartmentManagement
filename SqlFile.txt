@@ -1,0 +1,144 @@
+create database test;
+use test;
+
+create table admin(
+username varchar(30) not null,
+password varchar(30) not null);
+
+select * from admin;
+insert into admin(username,password) values('admin','admin');
+
+create table account(
+id_number varchar(30) not null,
+student_name varchar(30) not null,
+password varchar(30) not null,
+status varchar(30) not null);
+
+insert into account(id_number,student_name,password,status) values('1','Ananya','1234','no');
+insert into account(id_number,student_name,password,status) values('2','Bijila','1234','no');
+insert into account(id_number,student_name,password,status) values('3','Prithvin','1234','no');
+insert into account(id_number,student_name,password,status)  values('4','Kiran','1234','no');
+insert into account(id_number,student_name,password,status) values('5','Bharat','1234','no');
+
+
+select * from account;
+
+
+
+SELECT * FROM account WHERE id_number ='1' AND password = '1234' AND status = 'no';
+
+
+
+
+create table candidate(
+candidate_id varchar(30) not null,
+candidate_name varchar(60) not null,
+position_id integer not null,
+position_name varchar(30) not null,
+points integer not null);
+
+select * from candidate;
+SELECT * FROM candidate where position_id='1' order by -points limit 1;
+
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P1','Rahul',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P2','Sita',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P3','Raj',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P4','Ananya',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP1','Smita',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP2','Sourav',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP3','Kiran',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('S1','Gaurav',3,'Secretary',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('S2','Bharat',3,'Secretary',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('A1','Anu',4,'Auditor',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('A2','Brijila',4,'Auditor',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('T1','Pooja',5,'Treasurer',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('T2','Rahul',5,'Treasurer',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P1','Pinki',6,'Pio',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P2','Satya',6,'Pio',0);
+
+truncate candidate;
+select * from candidate;
+
+select candidate_name from candidate where position_id='1';
+
+commit;
+
+create database apartment;
+use apartment;
+
+create table cost(
+No INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+House_No varchar(30) not null,
+Month varchar(10) not null,
+Year varchar(10) not null,
+Purpose varchar(50) not null,
+Amount int not null);
+
+select * from cost;
+
+create table houserent(
+House_No varchar(30) not null,
+Floor varchar(30) not null,
+Unit varchar(10) not null,
+Tentant_Name varchar(50) not null,
+Contact varchar(30) not null,
+N_Id varchar(30) not null,
+Family_Member varchar(10) not null,
+Date varchar(30) not null);
+
+
+select * from houserent;
+
+
+create table user(
+Name varchar(30) not null,
+Username varchar(30) not null,
+Sec_Q varchar(50) not null,
+Answer varchar(50) not null,
+Password varchar(30) not null);
+
+select * from user;
+
+
+create table houseinfo(
+No INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+House_No varchar(10) not null,
+Floor varchar(10) not null,
+Unit varchar(10) not null,
+Details varchar(100),
+Rent int not null,
+About varchar(100));
+
+select * from houseinfo;
+
+
+create table Notice(
+Serial INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+House_No varchar(10) not null,
+Floor varchar(10) not null,
+Unit varchar(10) not null,
+Status varchar(30) not null,
+Date varchar(30) not null);
+
+select * from Status;
+
+create table rent(
+Day varchar(20) not null,
+Month varchar(20) not null,
+Year varchar(10) not null,
+House_No varchar(10) not null,
+Floor varchar(10) not null,
+Unit varchar(10) not null,
+Rent  varchar(10) not null,
+Electricity_Bill  varchar(10),
+Gas_Bill  varchar(10),
+Water_bill  varchar(10),
+Other_Charges  varchar(10),
+Total  varchar(10) not null,
+Status varchar(30) not null);
+
+
+select * from rent;
+
+
+
